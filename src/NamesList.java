@@ -38,8 +38,8 @@ public class NamesList {
     private void showMenu() {
         System.out.println("""
                 1) Display list of names
-                2) Load list of names (not implemented)
-                3) Save list of names (not implemented)
+                2) Load list of names
+                3) Save list of names
                 4) Enter names
                 0) Exit
                 """);
@@ -64,10 +64,16 @@ public class NamesList {
     }
 
     private void saveListOfNames() {
-        // TODO: Implement save of the names list to a file
-        System.out.println("NOT IMPLEMENTED");
-
-
+        PrintStream outputFile;
+        try {
+            outputFile = new PrintStream("names.txt");
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        for (String name : names) {
+            outputFile.println(name);
+        }
+        outputFile.close();
     }
 
     private void loadListOfNames() {
@@ -85,9 +91,7 @@ public class NamesList {
             //System.out.println(name);
             names.add(name);
         }
-
-
-
+        sc.close();
 
     }
 
@@ -101,7 +105,8 @@ public class NamesList {
             isAre = "is";
             s = "";
         }
-        System.out.println("There " + isAre + " " + names.size() + " name"+s+" in the system");
+        System.out.println("\n" + "There " + isAre + " " + names.size() + " name"+s+" in the system" + "\n");
+
     }
 
     private void exit() {
