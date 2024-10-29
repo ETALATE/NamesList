@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -62,9 +63,9 @@ public class NamesList {
         System.out.println("Done");
     }
 
-    private void saveListOfNames() {
+    private void saveListOfNames() throws FileNotFoundException {
         // TODO: Implement save of the names list to a file
-        System.out.println("NOT IMPLEMENTED");
+
     }
 
     private void loadListOfNames() {
@@ -79,9 +80,9 @@ public class NamesList {
         String name;
         while(sc.hasNextLine()) {
             name = sc.nextLine();
-            System.out.println(name);
+            names.add(name);
         }
-        System.out.println();
+
 
 
 
