@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -66,8 +68,23 @@ public class NamesList {
     }
 
     private void loadListOfNames() {
-        // TODO: Implement load of the names list from a file
-        System.out.println("NOT IMPLEMENTED");
+        Scanner sc;
+
+        try {
+            sc = new Scanner(new File("names.txt"));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        String name;
+        while(sc.hasNextLine()) {
+            name = sc.nextLine();
+            System.out.println(name);
+        }
+        System.out.println();
+
+
+
     }
 
     private void displayListOfNames() {
