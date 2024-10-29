@@ -63,8 +63,10 @@ public class NamesList {
         System.out.println("Done");
     }
 
-    private void saveListOfNames() throws FileNotFoundException {
+    private void saveListOfNames() {
         // TODO: Implement save of the names list to a file
+        System.out.println("NOT IMPLEMENTED");
+
 
     }
 
@@ -80,6 +82,7 @@ public class NamesList {
         String name;
         while(sc.hasNextLine()) {
             name = sc.nextLine();
+            //System.out.println(name);
             names.add(name);
         }
 
